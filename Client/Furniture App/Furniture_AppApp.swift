@@ -11,7 +11,8 @@ import SwiftUI
 struct Furniture_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
+                .environmentObject(CartViewModel())
         }
     }
 }
