@@ -19,7 +19,7 @@ public class Product {
     private String image;
     private String description;
     private String supplier;
-    private String price;
-    private String rating;
-    private String isAddedToFavourate;
+    private Integer price;
+    private Double rating;
+    private Boolean isAddedToFavourate;
 }
