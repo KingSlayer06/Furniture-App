@@ -21,7 +21,7 @@ enum Tab: Int, Identifiable {
     var image: String {
         switch self {
             case .home: "house"
-            case .search: "magnifyingglass.circle"
+            case .search: "square.grid.2x2"
             case .cart: "cart"
             case .profile: "person"
         }
@@ -30,7 +30,7 @@ enum Tab: Int, Identifiable {
     var selectedImage: String {
         switch self {
             case .home: "house.fill"
-            case .search: "magnifyingglass.circle.fill"
+            case .search: "square.grid.2x2.fill"
             case .cart: "cart.fill"
             case .profile: "person.fill"
         }

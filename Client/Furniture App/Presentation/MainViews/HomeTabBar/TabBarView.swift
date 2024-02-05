@@ -24,7 +24,7 @@ struct TabBarView: View {
                         HomeView()
                             .tag(tab)
                     case .search:
-                        SearchView()
+                        AllFurnituresView()
                             .tag(tab)
                     case .cart:
                         CartView()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllProductsView: View {
+struct AllFurnituresView: View {
     
     let column = [GridItem(.adaptive(minimum: 160), spacing: 20)]
     
@@ -28,6 +28,6 @@ struct AllProductsView: View {
 }
 
 #Preview {
-    AllProductsView()
+    AllFurnituresView()
         .environmentObject(CartViewModel())
 }
