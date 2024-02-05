@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TabBarView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
+    
+    @Environment(\.modelContext) private var modelContext
+    @Query private var cartItems: [ProductModel]
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -39,6 +43,10 @@ struct TabBarView: View {
             bottomTabBar
         }
         .ignoresSafeArea(.all, edges: .vertical)
+        .onAppear {
+            cartViewModel.syncCart(cartItems: cartItems)
+            cartViewModel.modelContext = modelContext
+        }
     }
 }
 

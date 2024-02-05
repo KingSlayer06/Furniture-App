@@ -22,7 +22,7 @@ struct ProfileView: View {
                     .padding(.vertical)
                 
                 NavigationLink {
-                    
+                    Text("Edit Profile")
                 } label: {
                     Text("Edit Profile")
                         .font(.headline.bold())

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CartProductView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
+    @Environment(\.modelContext) var context
     var product: Product
     
     var body: some View {

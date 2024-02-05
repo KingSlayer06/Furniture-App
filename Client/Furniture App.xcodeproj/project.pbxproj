@@ -14,6 +14,7 @@
 		A37FB25E2B6CC31000F6414D /* CartProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB25D2B6CC31000F6414D /* CartProductView.swift */; };
 		A39CC8012B70B12F0002CE28 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CC8002B70B12F0002CE28 /* Haptics.swift */; };
 		A39CC8042B70B4EF0002CE28 /* AllFurnituresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CC8032B70B4EF0002CE28 /* AllFurnituresView.swift */; };
+		A39CC80A2B70DC790002CE28 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CC8092B70DC790002CE28 /* ProductModel.swift */; };
 		A3DA0C332B6A101800B0D2F0 /* Furniture_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA0C322B6A101800B0D2F0 /* Furniture_AppApp.swift */; };
 		A3DA0C352B6A101800B0D2F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA0C342B6A101800B0D2F0 /* ContentView.swift */; };
 		A3DA0C372B6A101900B0D2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3DA0C362B6A101900B0D2F0 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		A37FB25D2B6CC31000F6414D /* CartProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductView.swift; sourceTree = "<group>"; };
 		A39CC8002B70B12F0002CE28 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		A39CC8032B70B4EF0002CE28 /* AllFurnituresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFurnituresView.swift; sourceTree = "<group>"; };
+		A39CC8092B70DC790002CE28 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		A3DA0C2F2B6A101800B0D2F0 /* Furniture App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Furniture App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DA0C322B6A101800B0D2F0 /* Furniture_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture_AppApp.swift; sourceTree = "<group>"; };
 		A3DA0C342B6A101800B0D2F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			children = (
 			);
 			path = AllProducts;
+			sourceTree = "<group>";
+		};
+		A39CC8082B70DC6D0002CE28 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				A39CC8092B70DC790002CE28 /* ProductModel.swift */,
+			);
+			path = SwiftData;
 			sourceTree = "<group>";
 		};
 		A3DA0C262B6A101800B0D2F0 = {
@@ -139,6 +149,7 @@
 		A3DA0C412B6A131B00B0D2F0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A39CC8082B70DC6D0002CE28 /* SwiftData */,
 				A3DA0C562B6A64EC00B0D2F0 /* Model */,
 			);
 			path = Data;
@@ -307,6 +318,7 @@
 				A39CC8042B70B4EF0002CE28 /* AllFurnituresView.swift in Sources */,
 				A3DA0C532B6A1BDE00B0D2F0 /* CartView.swift in Sources */,
 				A3DA0C352B6A101800B0D2F0 /* ContentView.swift in Sources */,
+				A39CC80A2B70DC790002CE28 /* ProductModel.swift in Sources */,
 				A37FB25C2B6CADC700F6414D /* KeyVariables.swift in Sources */,
 				A3DA0C5C2B6A6C6D00B0D2F0 /* DynamicDots.swift in Sources */,
 				A32023C92B709659001627AE /* ProductDetailsView.swift in Sources */,

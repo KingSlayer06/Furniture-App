@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Furniture_AppApp: App {
+    
     var body: some Scene {
         WindowGroup {
             TabBarView()
                 .environmentObject(HomeViewModel())
                 .environmentObject(CartViewModel())
         }
+        .modelContainer(for: ProductModel.self)
     }
 }
