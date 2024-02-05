@@ -8,7 +8,7 @@
 import Foundation
 
 struct Product: Identifiable, Codable {
-    var id: String
+    var id: Int
     var name: String
     var image: String
     var description: String
@@ -17,8 +17,8 @@ struct Product: Identifiable, Codable {
     var rating: Double
     var isAddedToFavourate: Bool
     
-    init(name: String, image: String, description: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
-        self.id = UUID().uuidString
+    init(id: Int, name: String, image: String, description: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
+        self.id = id
         self.name = name
         self.image = image
         self.description = description
@@ -31,6 +31,7 @@ struct Product: Identifiable, Codable {
 
 var productList: [Product] = [
     Product(
+        id: 1,
         name: "Coloured chair",
         image: "furniture-1",
         description: "Two Assorted-color Padded Chairs Near Side Table",
@@ -41,6 +42,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 2,
         name: "Dark wooden shelf",
         image: "furniture-2",
         description: "",
@@ -51,6 +53,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 3,
         name: "Light 2ooden shelf",
         image: "furniture-3",
         description: "",
@@ -61,6 +64,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 4,
         name: "Black fabric sofa",
         image: "furniture-4",
         description: "",
@@ -71,6 +75,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 5,
         name: "White fabric sofa",
         image: "furniture-5",
         description: "",
@@ -81,6 +86,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 6,
         name: "White fabric sofa",
         image: "furniture-5",
         description: "",
@@ -91,6 +97,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 7,
         name: "Wooden bed",
         image: "furniture-6",
         description: "",
@@ -101,6 +108,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 8,
         name: "Brown leather couch",
         image: "furniture-7",
         description: "",
@@ -111,6 +119,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 9,
         name: "White fabric sofa",
         image: "furniture-8",
         description: "",
@@ -121,6 +130,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 10,
         name: "Grey fabric couch",
         image: "furniture-9",
         description: "",
@@ -131,6 +141,7 @@ var productList: [Product] = [
     ),
     
     Product(
+        id: 11,
         name: "Purple armchair",
         image: "furniture-10",
         description: "",

@@ -46,6 +46,8 @@ struct TabBarView: View {
         .onAppear {
             cartViewModel.syncCart(cartItems: cartItems)
             cartViewModel.modelContext = modelContext
+            
+            homeViewModel.fetchProducts()
         }
     }
 }

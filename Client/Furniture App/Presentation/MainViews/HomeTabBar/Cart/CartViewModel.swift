@@ -26,7 +26,8 @@ class CartViewModel: ObservableObject {
         products.append(product)
         total += product.price
         
-        let productModel = ProductModel(name: product.name,
+        let productModel = ProductModel(id: product.id,
+                                        name: product.name,
                                         image: product.image,
                                         desc: product.description,
                                         supplier: product.supplier,
@@ -46,7 +47,8 @@ class CartViewModel: ObservableObject {
         try? modelContext?.delete(model: ProductModel.self)
         
         for _product in products {
-            let productModel = ProductModel(name: _product.name,
+            let productModel = ProductModel(id: _product.id,
+                                            name: _product.name,
                                             image: _product.image,
                                             desc: _product.description,
                                             supplier: _product.supplier,
@@ -71,7 +73,7 @@ class CartViewModel: ObservableObject {
         total = 0
         
         for item in cartItems {
-            let product = Product(name: item.name,
+            let product = Product(id: item.id, name: item.name,
                                   image: item.image,
                                   description: item.desc,
                                   supplier: item.supplier,

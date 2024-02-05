@@ -10,10 +10,13 @@ import Combine
 
 final  class ProductRepository: PProductRepository {
     
+    private var cancellables = Set<AnyCancellable>()
+    
     func fetchAllProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
         
-        guard let url = URL(string: "") else { return }
+        guard let url = URL(string: "http://localhost:8080/product/allProducts") else { return }
         
+        print("fetchAllProducts API called")
         URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: [Product].self, decoder: JSONDecoder())
@@ -29,5 +32,6 @@ final  class ProductRepository: PProductRepository {
             } receiveValue: { response in
                 completion(.success(response))
             }
+            .store(in: &cancellables)
     }
 }

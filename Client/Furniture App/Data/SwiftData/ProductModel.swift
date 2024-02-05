@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class ProductModel: Identifiable {
-    var id: String
+    var id: Int
     var name: String
     var image: String
     var desc: String
@@ -19,8 +19,8 @@ class ProductModel: Identifiable {
     var rating: Double
     var isAddedToFavourate: Bool
     
-    init(name: String, image: String, desc: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
-        self.id = UUID().uuidString
+    init(id: Int, name: String, image: String, desc: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
+        self.id = id
         self.name = name
         self.image = image
         self.desc = desc
