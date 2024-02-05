@@ -51,6 +51,9 @@ struct ProductCardView: View {
                         .padding(.trailing)
                 }
                 .disabled(isAddedToCart)
+                .onAppear {
+                    isAddedToCart = cartViewModel.products.contains(where: { $0.id == product.id })
+                }
             }
         }
         .frame(width: 185, height: 260)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
+    @Environment(\.dismiss) private var dismiss
     var product: Product
     
     var body: some View {
@@ -80,25 +81,32 @@ struct ProductDetailsView: View {
             }
         }
         .overlay(alignment: .bottom) {
-            Button {
-                cartViewModel.addToCart(product: product) {
-                    
-                }
-            } label: {
-                Text("Add To Cart")
-                    .font(.headline.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .padding(.vertical, 20)
-                    .foregroundColor(.white)
-                    .background(Color(KeyVariables.primaryColor))
-                    .cornerRadius(12)
-                    .padding(.top)
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 35)
+            addToCartButton
         }
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+extension ProductDetailsView {
+    
+    var addToCartButton: some View {
+        Button {
+            cartViewModel.addToCart(product: product) {
+                dismiss()
+            }
+        } label: {
+            Text("Add To Cart")
+                .font(.headline.bold())
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                .padding(.vertical, 20)
+                .foregroundColor(.white)
+                .background(Color(KeyVariables.primaryColor))
+                .cornerRadius(12)
+                .padding(.top)
+        }
+        .padding(.horizontal)
+        .padding(.bottom, 35)
     }
 }
 

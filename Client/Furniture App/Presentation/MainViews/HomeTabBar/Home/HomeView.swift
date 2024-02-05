@@ -18,28 +18,34 @@ struct HomeView: View {
     let carouselHeight: CGFloat = 200
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                header
-                searchView
-                carouselView
-                
-                HStack {
-                    Text("New Arrivals")
-                        .font(.title2)
-                        .fontWeight(.medium)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    header
+                    searchView
+                    carouselView
                     
-                    Spacer()
+                    HStack {
+                        Text("New Arrivals")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "circle.grid.2x2.fill")
+                            .foregroundColor(Color(KeyVariables.primaryColor))
+                    }
+                    .padding(.horizontal)
                     
-                    Image(systemName: "circle.grid.2x2.fill")
-                        .foregroundColor(Color(KeyVariables.primaryColor))
-                }
-                .padding(.horizontal)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(productList, id: \.id) { product in
-                            ProductCardView(product: product)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(productList, id: \.id) { product in
+                                NavigationLink {
+                                    ProductDetailsView(product: product)
+                                } label: {
+                                    ProductCardView(product: product)
+                                }
+                            }
                         }
                     }
                 }
@@ -53,11 +59,15 @@ extension HomeView {
     var carouselView: some View {
         TabView(selection: $selectedCrousel) {
             ForEach(carouselList.indices, id: \.self) { index in
-                Image(carouselList[index].image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: width, height: carouselHeight)
-                    .clipShape(Rectangle())
+                NavigationLink {
+                    ProductDetailsView(product: carouselList[index])
+                } label: {
+                    Image(carouselList[index].image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: width, height: carouselHeight)
+                        .clipShape(Rectangle())
+                }
             }
         }
         .frame(height: carouselHeight)

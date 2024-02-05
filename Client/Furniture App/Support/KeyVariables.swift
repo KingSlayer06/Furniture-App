@@ -10,4 +10,5 @@ import Foundation
 struct KeyVariables {
     static let primaryColor = "kPrimary"
     static let secondaryColor = "kSecondary"
+    static let themeColor = "kTheme"
 }
