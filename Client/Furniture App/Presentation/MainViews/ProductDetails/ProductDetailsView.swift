@@ -45,7 +45,7 @@ struct ProductDetailsView: View {
                             .font(.title2)
                             .fontWeight(.medium)
                     }
-                    .foregroundColor(.black)
+                    .padding(.top)
                     
                     HStack(spacing: 10) {
                         ForEach(0..<Int(product.rating)) { _ in
@@ -66,7 +66,6 @@ struct ProductDetailsView: View {
                         
                         Text("(\(String(format: "%.1f", product.rating)))")
                             .font(.headline)
-                            .foregroundColor(.black)
                     }
                     .padding(.vertical)
                     
@@ -79,9 +78,6 @@ struct ProductDetailsView: View {
                 }
                 .padding(.horizontal)
             }
-        }
-        .background {
-            Color(KeyVariables.secondaryColor)
         }
         .overlay(alignment: .bottom) {
             Button {
