@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         VStack {
@@ -58,7 +59,7 @@ extension CartView {
                 .font(.headline)
             
             Button {
-                
+                homeViewModel.selectedTab = .home
             } label: {
                 Text("Go Home")
                     .font(.headline.bold())
@@ -74,7 +75,9 @@ extension CartView {
     
     var checkoutButton: some View {
         Button {
-            
+            cartViewModel.checkOut {
+                
+            }
         } label: {
             Text("Checkout Now")
                 .font(.headline.bold())
@@ -91,5 +94,6 @@ extension CartView {
 
 #Preview {
     CartView()
+        .environmentObject(HomeViewModel())
         .environmentObject(CartViewModel())
 }

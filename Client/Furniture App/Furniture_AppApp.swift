@@ -12,6 +12,7 @@ struct Furniture_AppApp: App {
     var body: some Scene {
         WindowGroup {
             TabBarView()
+                .environmentObject(HomeViewModel())
                 .environmentObject(CartViewModel())
         }
     }

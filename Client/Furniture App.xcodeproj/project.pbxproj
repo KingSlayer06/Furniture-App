@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32023C62B709357001627AE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32023C52B709357001627AE /* HomeViewModel.swift */; };
+		A32023C92B709659001627AE /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32023C82B709659001627AE /* ProductDetailsView.swift */; };
 		A37FB2592B6CAD7400F6414D /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB2582B6CAD7400F6414D /* ProductCardView.swift */; };
 		A37FB25C2B6CADC700F6414D /* KeyVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB25B2B6CADC700F6414D /* KeyVariables.swift */; };
 		A37FB25E2B6CC31000F6414D /* CartProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB25D2B6CC31000F6414D /* CartProductView.swift */; };
+		A39CC8012B70B12F0002CE28 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CC8002B70B12F0002CE28 /* Haptics.swift */; };
+		A39CC8042B70B4EF0002CE28 /* AllProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CC8032B70B4EF0002CE28 /* AllProductsView.swift */; };
 		A3DA0C332B6A101800B0D2F0 /* Furniture_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA0C322B6A101800B0D2F0 /* Furniture_AppApp.swift */; };
 		A3DA0C352B6A101800B0D2F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA0C342B6A101800B0D2F0 /* ContentView.swift */; };
 		A3DA0C372B6A101900B0D2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3DA0C362B6A101900B0D2F0 /* Assets.xcassets */; };
@@ -27,9 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32023C52B709357001627AE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A32023C82B709659001627AE /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		A37FB2582B6CAD7400F6414D /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		A37FB25B2B6CADC700F6414D /* KeyVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyVariables.swift; sourceTree = "<group>"; };
 		A37FB25D2B6CC31000F6414D /* CartProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductView.swift; sourceTree = "<group>"; };
+		A39CC8002B70B12F0002CE28 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		A39CC8032B70B4EF0002CE28 /* AllProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsView.swift; sourceTree = "<group>"; };
 		A3DA0C2F2B6A101800B0D2F0 /* Furniture App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Furniture App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DA0C322B6A101800B0D2F0 /* Furniture_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture_AppApp.swift; sourceTree = "<group>"; };
 		A3DA0C342B6A101800B0D2F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,12 +66,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A32023C72B709646001627AE /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A32023C82B709659001627AE /* ProductDetailsView.swift */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
 		A37FB25A2B6CADB900F6414D /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				A37FB25B2B6CADC700F6414D /* KeyVariables.swift */,
+				A39CC8002B70B12F0002CE28 /* Haptics.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		A39CC8022B70B4DB0002CE28 /* AllProducts */ = {
+			isa = PBXGroup;
+			children = (
+				A39CC8032B70B4EF0002CE28 /* AllProductsView.swift */,
+			);
+			path = AllProducts;
 			sourceTree = "<group>";
 		};
 		A3DA0C262B6A101800B0D2F0 = {
@@ -133,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A3DA0C452B6A135A00B0D2F0 /* HomeTabBar */,
+				A32023C72B709646001627AE /* ProductDetails */,
+				A39CC8022B70B4DB0002CE28 /* AllProducts */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -165,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				A3DA0C4E2B6A1BAC00B0D2F0 /* HomeView.swift */,
+				A32023C52B709357001627AE /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -272,15 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39CC8012B70B12F0002CE28 /* Haptics.swift in Sources */,
 				A3DA0C5E2B6A6FAA00B0D2F0 /* CartViewModel.swift in Sources */,
 				A3DA0C552B6A1BE800B0D2F0 /* ProfileView.swift in Sources */,
 				A3DA0C472B6A137C00B0D2F0 /* Tab.swift in Sources */,
+				A32023C62B709357001627AE /* HomeViewModel.swift in Sources */,
 				A3DA0C582B6A64F700B0D2F0 /* Product.swift in Sources */,
 				A3DA0C5A2B6A6C0C00B0D2F0 /* DynamicCarouselDotsView.swift in Sources */,
+				A39CC8042B70B4EF0002CE28 /* AllProductsView.swift in Sources */,
 				A3DA0C532B6A1BDE00B0D2F0 /* CartView.swift in Sources */,
 				A3DA0C352B6A101800B0D2F0 /* ContentView.swift in Sources */,
 				A37FB25C2B6CADC700F6414D /* KeyVariables.swift in Sources */,
 				A3DA0C5C2B6A6C6D00B0D2F0 /* DynamicDots.swift in Sources */,
+				A32023C92B709659001627AE /* ProductDetailsView.swift in Sources */,
 				A3DA0C492B6A14C300B0D2F0 /* TabBarView.swift in Sources */,
 				A3DA0C4F2B6A1BAC00B0D2F0 /* HomeView.swift in Sources */,
 				A37FB25E2B6CC31000F6414D /* CartProductView.swift in Sources */,
@@ -420,9 +452,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Furniture App/Preview Content\"";
-				DEVELOPMENT_TEAM = VGY3MD3FN7;
+				DEVELOPMENT_TEAM = 4B485XW35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -433,11 +466,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KingSlayer.Furniture-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KingSlayer.FurnitureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,9 +485,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Furniture App/Preview Content\"";
-				DEVELOPMENT_TEAM = VGY3MD3FN7;
+				DEVELOPMENT_TEAM = 4B485XW35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,11 +499,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KingSlayer.Furniture-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KingSlayer.FurnitureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

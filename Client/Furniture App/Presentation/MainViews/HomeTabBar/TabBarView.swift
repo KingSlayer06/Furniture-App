@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
-    @State var selectedTab: Tab = .home
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -17,7 +17,7 @@ struct TabBarView: View {
     
     var body: some View {
         VStack {
-            TabView(selection: $selectedTab) {
+            TabView(selection: $homeViewModel.selectedTab) {
                 ForEach(tabs, id: \.id) { tab in
                     switch tab {
                     case .home:
@@ -49,14 +49,14 @@ extension TabBarView {
             ForEach(tabs, id: \.id) { tab in
                 Spacer()
                 
-                Image(systemName: selectedTab == tab ? tab.selectedImage : tab.image)
+                Image(systemName: homeViewModel.selectedTab == tab ? tab.selectedImage : tab.image)
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(Color(KeyVariables.primaryColor))
                     .frame(width: 25, height: 25)
                     .onTapGesture {
                         withAnimation(.easeIn(duration: 0.25)) {
-                            selectedTab = tab
+                            homeViewModel.selectedTab = tab
                         }
                     }
                     .overlay {
@@ -74,12 +74,13 @@ extension TabBarView {
                 Spacer()
             }
         }
-        .padding(.bottom, 25)
+        .padding(.bottom, 35)
         .padding(.top, 10)
     }
 }
 
 #Preview {
     TabBarView()
+        .environmentObject(HomeViewModel())
         .environmentObject(CartViewModel())
 }

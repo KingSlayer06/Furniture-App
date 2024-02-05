@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductCardView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
+    @State var isAddedToCart: Bool = false
     var product: Product
     
     var body: some View {
@@ -39,14 +40,17 @@ struct ProductCardView: View {
                 }
                 
                 Button {
-                    cartViewModel.addToCart(product: product)
+                    cartViewModel.addToCart(product: product) {
+                        isAddedToCart = cartViewModel.products.contains(where: { $0.id == product.id })
+                    }
                 } label: {
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: isAddedToCart ? "checkmark.circle.fill" : "plus.circle.fill")
                         .resizable()
                         .foregroundColor(Color(KeyVariables.primaryColor))
                         .frame(width: 35, height: 35)
                         .padding(.trailing)
                 }
+                .disabled(isAddedToCart)
             }
         }
         .frame(width: 185, height: 260)

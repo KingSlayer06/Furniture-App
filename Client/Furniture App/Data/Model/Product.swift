@@ -14,6 +14,8 @@ struct Product: Identifiable {
     var description: String
     var supplier: String
     var price: Int
+    var rating: Double
+    var isAddedToFavourate: Bool
 }
 
 var productList: [Product] = [
@@ -22,7 +24,9 @@ var productList: [Product] = [
         image: "furniture-1",
         description: "Two Assorted-color Padded Chairs Near Side Table",
         supplier: "IKEA",
-        price: 399
+        price: 399,
+        rating: 4.5,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -30,7 +34,9 @@ var productList: [Product] = [
         image: "furniture-2",
         description: "",
         supplier: "IKEA",
-        price: 379
+        price: 379,
+        rating: 5,
+        isAddedToFavourate: true
     ),
     
     Product(
@@ -38,7 +44,9 @@ var productList: [Product] = [
         image: "furniture-3",
         description: "",
         supplier: "IKEA",
-        price: 349
+        price: 349,
+        rating: 4.2,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -46,7 +54,9 @@ var productList: [Product] = [
         image: "furniture-4",
         description: "",
         supplier: "IKEA",
-        price: 499
+        price: 499,
+        rating: 3.6,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -54,7 +64,9 @@ var productList: [Product] = [
         image: "furniture-5",
         description: "",
         supplier: "IKEA",
-        price: 449
+        price: 449,
+        rating: 4.7,
+        isAddedToFavourate: true
     ),
     
     Product(
@@ -62,7 +74,9 @@ var productList: [Product] = [
         image: "furniture-5",
         description: "",
         supplier: "IKEA",
-        price: 449
+        price: 449,
+        rating: 3.2,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -70,7 +84,9 @@ var productList: [Product] = [
         image: "furniture-6",
         description: "",
         supplier: "IKEA",
-        price: 529
+        price: 529,
+        rating: 2.4,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -78,7 +94,9 @@ var productList: [Product] = [
         image: "furniture-7",
         description: "",
         supplier: "IKEA",
-        price: 339
+        price: 339,
+        rating: 4.5,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -86,7 +104,9 @@ var productList: [Product] = [
         image: "furniture-8",
         description: "",
         supplier: "IKEA",
-        price: 449
+        price: 449,
+        rating: 3.6,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -94,7 +114,9 @@ var productList: [Product] = [
         image: "furniture-9",
         description: "",
         supplier: "IKEA",
-        price: 349
+        price: 349,
+        rating: 2.7,
+        isAddedToFavourate: false
     ),
     
     Product(
@@ -102,7 +124,9 @@ var productList: [Product] = [
         image: "furniture-10",
         description: "",
         supplier: "IKEA",
-        price: 329
+        price: 329,
+        rating: 5,
+        isAddedToFavourate: true
     ),
 ]
 

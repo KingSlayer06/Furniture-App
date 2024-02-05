@@ -18,7 +18,7 @@ struct HomeView: View {
     let carouselHeight: CGFloat = 200
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false){
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 header
                 searchView

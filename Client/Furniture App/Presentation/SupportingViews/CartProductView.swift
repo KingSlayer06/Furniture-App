@@ -29,29 +29,11 @@ struct CartProductView: View {
             
             Spacer()
             
-            HStack {
-                Image(systemName: "minus.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color(KeyVariables.primaryColor))
-                    .onTapGesture {
-                        
-                    }
-                
-                Text("2")
-                    .font(.title2.bold())
-                    .foregroundColor(.black)
-                
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color(KeyVariables.primaryColor))
-                    .onTapGesture {
-                        
-                    }
-            }
+            Image(systemName: "trash")
+                .foregroundColor(.red)
+                .onTapGesture {
+                    cartViewModel.removeFromCart(product: product)
+                }
         }
         .padding(.horizontal)
         .background(Color(KeyVariables.secondaryColor))
