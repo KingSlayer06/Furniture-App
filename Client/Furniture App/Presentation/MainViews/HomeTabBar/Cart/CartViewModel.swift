@@ -43,31 +43,26 @@ class CartViewModel: ObservableObject {
         products = products.filter { $0.id != product.id }
         total -= product.price
         
-        let productModel = ProductModel(name: product.name,
-                                        image: product.image,
-                                        desc: product.desc,
-                                        supplier: product.supplier,
-                                        price: product.price,
-                                        rating: product.rating,
-                                        isAddedToFavourate: product.isAddedToFavourate)
+        try? modelContext?.delete(model: ProductModel.self)
         
-        modelContext?.delete(productModel)
-        
-        do {
-            try modelContext?.save()
-        } catch {
-            print("Failed to delete product form SwiftData")
+        for _product in products {
+            let productModel = ProductModel(name: _product.name,
+                                            image: _product.image,
+                                            desc: _product.desc,
+                                            supplier: _product.supplier,
+                                            price: _product.price,
+                                            rating: _product.rating,
+                                            isAddedToFavourate: _product.isAddedToFavourate)
+            
+            modelContext?.insert(productModel)
         }
     }
     
     func checkOut(completion: @escaping () -> Void) {
         
         products.removeAll()
-        do {
-            try modelContext?.delete(model: ProductModel.self)
-        } catch {
-            print("Failed to delete all products form SwiftData")
-        }
+        try? modelContext?.delete(model: ProductModel.self)
+
         completion()
     }
     
