@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllFurnituresView: View {
-    
+    @EnvironmentObject var homeViewModel: HomeViewModel
     let column = [GridItem(.adaptive(minimum: 160), spacing: 20)]
     
     var body: some View {
@@ -20,7 +20,7 @@ struct AllFurnituresView: View {
                     .padding(.horizontal)
                 
                 LazyVGrid(columns: column, spacing: 20) {
-                    ForEach(productList, id: \.id) { product in
+                    ForEach(homeViewModel.products, id: \.id) { product in
                         NavigationLink {
                             ProductDetailsView(product: product)
                         } label: {

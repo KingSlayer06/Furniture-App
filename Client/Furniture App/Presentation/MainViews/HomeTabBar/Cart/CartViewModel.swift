@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 class CartViewModel: ObservableObject {
-    @Published private (set) var products: [Product] = []
+    @Published private (set) var products = [Product]()
     @Published private (set) var total: Int = 0
     
     @Published var modelContext: ModelContext?

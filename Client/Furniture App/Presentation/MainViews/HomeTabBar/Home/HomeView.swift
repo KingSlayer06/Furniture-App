@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var homeViewModel: HomeViewModel
     @State private var selectedCrousel = 0
     @State private var carouselTimer: Timer?
     @State private var searchText: String = ""
@@ -39,7 +40,7 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            ForEach(productList, id: \.id) { product in
+                            ForEach(homeViewModel.products, id: \.id) { product in
                                 NavigationLink {
                                     ProductDetailsView(product: product)
                                 } label: {
@@ -164,4 +165,5 @@ extension HomeView {
 
 #Preview {
     HomeView()
+        .environmentObject(HomeViewModel())
 }
