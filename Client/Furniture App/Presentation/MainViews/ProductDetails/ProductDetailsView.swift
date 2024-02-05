@@ -75,7 +75,7 @@ struct ProductDetailsView: View {
                         .fontWeight(.medium)
                         .foregroundColor(.black)
                     
-                    Text(product.desc)
+                    Text(product.description)
                 }
                 .padding(.horizontal)
             }

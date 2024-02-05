@@ -28,7 +28,7 @@ class CartViewModel: ObservableObject {
         
         let productModel = ProductModel(name: product.name,
                                         image: product.image,
-                                        desc: product.desc,
+                                        desc: product.description,
                                         supplier: product.supplier,
                                         price: product.price,
                                         rating: product.rating,
@@ -48,7 +48,7 @@ class CartViewModel: ObservableObject {
         for _product in products {
             let productModel = ProductModel(name: _product.name,
                                             image: _product.image,
-                                            desc: _product.desc,
+                                            desc: _product.description,
                                             supplier: _product.supplier,
                                             price: _product.price,
                                             rating: _product.rating,
@@ -73,7 +73,7 @@ class CartViewModel: ObservableObject {
         for item in cartItems {
             let product = Product(name: item.name,
                                   image: item.image,
-                                  desc: item.desc,
+                                  description: item.desc,
                                   supplier: item.supplier,
                                   price: item.price,
                                   rating: item.rating,

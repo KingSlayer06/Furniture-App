@@ -11,17 +11,17 @@ struct Product: Identifiable, Codable {
     var id: String
     var name: String
     var image: String
-    var desc: String
+    var description: String
     var supplier: String
     var price: Int
     var rating: Double
     var isAddedToFavourate: Bool
     
-    init(name: String, image: String, desc: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
+    init(name: String, image: String, description: String, supplier: String, price: Int, rating: Double, isAddedToFavourate: Bool) {
         self.id = UUID().uuidString
         self.name = name
         self.image = image
-        self.desc = desc
+        self.description = description
         self.supplier = supplier
         self.price = price
         self.rating = rating
@@ -33,7 +33,7 @@ var productList: [Product] = [
     Product(
         name: "Coloured chair",
         image: "furniture-1",
-        desc: "Two Assorted-color Padded Chairs Near Side Table",
+        description: "Two Assorted-color Padded Chairs Near Side Table",
         supplier: "IKEA",
         price: 399,
         rating: 4.5,
@@ -43,7 +43,7 @@ var productList: [Product] = [
     Product(
         name: "Dark wooden shelf",
         image: "furniture-2",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 379,
         rating: 5,
@@ -53,7 +53,7 @@ var productList: [Product] = [
     Product(
         name: "Light 2ooden shelf",
         image: "furniture-3",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 349,
         rating: 4.2,
@@ -63,7 +63,7 @@ var productList: [Product] = [
     Product(
         name: "Black fabric sofa",
         image: "furniture-4",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 499,
         rating: 3.6,
@@ -73,7 +73,7 @@ var productList: [Product] = [
     Product(
         name: "White fabric sofa",
         image: "furniture-5",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 449,
         rating: 4.7,
@@ -83,7 +83,7 @@ var productList: [Product] = [
     Product(
         name: "White fabric sofa",
         image: "furniture-5",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 449,
         rating: 3.2,
@@ -93,7 +93,7 @@ var productList: [Product] = [
     Product(
         name: "Wooden bed",
         image: "furniture-6",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 529,
         rating: 2.4,
@@ -103,7 +103,7 @@ var productList: [Product] = [
     Product(
         name: "Brown leather couch",
         image: "furniture-7",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 339,
         rating: 4.5,
@@ -113,7 +113,7 @@ var productList: [Product] = [
     Product(
         name: "White fabric sofa",
         image: "furniture-8",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 449,
         rating: 3.6,
@@ -123,7 +123,7 @@ var productList: [Product] = [
     Product(
         name: "Grey fabric couch",
         image: "furniture-9",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 349,
         rating: 2.7,
@@ -133,7 +133,7 @@ var productList: [Product] = [
     Product(
         name: "Purple armchair",
         image: "furniture-10",
-        desc: "",
+        description: "",
         supplier: "IKEA",
         price: 329,
         rating: 5,
