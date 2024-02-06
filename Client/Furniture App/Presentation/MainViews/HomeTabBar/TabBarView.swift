@@ -15,6 +15,8 @@ struct TabBarView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var cartItems: [ProductModel]
     
+    @State var showCheckoutBottomSheet = false
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -31,7 +33,7 @@ struct TabBarView: View {
                         AllFurnituresView()
                             .tag(tab)
                     case .cart:
-                        CartView()
+                        CartView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
                             .tag(tab)
                     case .profile:
                         ProfileView()
@@ -43,6 +45,11 @@ struct TabBarView: View {
             bottomTabBar
         }
         .ignoresSafeArea(.all, edges: .vertical)
+        .sheet(isPresented: $showCheckoutBottomSheet) {
+            CartCheckoutView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+        }
         .onAppear {
             cartViewModel.syncCart(cartItems: cartItems)
             cartViewModel.modelContext = modelContext
