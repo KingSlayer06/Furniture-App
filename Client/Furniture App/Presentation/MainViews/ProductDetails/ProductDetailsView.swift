@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailsView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     @Environment(\.dismiss) private var dismiss
+    @State var isAddedToCart: Bool = false
     var product: Product
     
     var body: some View {
@@ -92,10 +93,11 @@ extension ProductDetailsView {
     var addToCartButton: some View {
         Button {
             cartViewModel.addToCart(product: product) {
+                isAddedToCart = cartViewModel.products.contains(where: { $0.id == product.id })
                 dismiss()
             }
         } label: {
-            Text("Add To Cart")
+            Text(isAddedToCart ? "Added To Cart" : "Add To Cart")
                 .font(.headline.bold())
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal)
@@ -107,6 +109,10 @@ extension ProductDetailsView {
         }
         .padding(.horizontal)
         .padding(.bottom, 35)
+        .disabled(isAddedToCart)
+        .onAppear {
+            isAddedToCart = cartViewModel.products.contains(where: { $0.id == product.id })
+        }
     }
 }
 
