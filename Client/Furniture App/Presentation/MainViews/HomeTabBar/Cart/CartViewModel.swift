@@ -11,8 +11,10 @@ import SwiftData
 class CartViewModel: ObservableObject {
     @Published private (set) var products = [Product]()
     @Published private (set) var total: Int = 0
+    @Published var isOrderPlaced: Bool = false
     
     @Published var modelContext: ModelContext?
+    
     
     init(modelContext: ModelContext? = nil) {
         self.modelContext = modelContext
@@ -61,7 +63,6 @@ class CartViewModel: ObservableObject {
     }
     
     func checkOut(completion: @escaping () -> Void) {
-        
         products.removeAll()
         try? modelContext?.delete(model: ProductModel.self)
 

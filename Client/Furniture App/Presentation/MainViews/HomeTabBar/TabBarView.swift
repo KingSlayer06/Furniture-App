@@ -22,33 +22,38 @@ struct TabBarView: View {
     }
     
     var body: some View {
-        VStack {
-            TabView(selection: $homeViewModel.selectedTab) {
-                ForEach(tabs, id: \.id) { tab in
-                    switch tab {
-                    case .home:
-                        HomeView()
-                            .tag(tab)
-                    case .search:
-                        AllFurnituresView()
-                            .tag(tab)
-                    case .cart:
-                        CartView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
-                            .tag(tab)
-                    case .profile:
-                        ProfileView()
-                            .tag(tab)
+        NavigationStack {
+            VStack {
+                TabView(selection: $homeViewModel.selectedTab) {
+                    ForEach(tabs, id: \.id) { tab in
+                        switch tab {
+                        case .home:
+                            HomeView()
+                                .tag(tab)
+                        case .search:
+                            AllFurnituresView()
+                                .tag(tab)
+                        case .cart:
+                            CartView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
+                                .tag(tab)
+                        case .profile:
+                            ProfileView()
+                                .tag(tab)
+                        }
                     }
                 }
+                
+                bottomTabBar
             }
-            
-            bottomTabBar
+            .navigationDestination(isPresented: $cartViewModel.isOrderPlaced) {
+                OrderPlacedView()
+            }
         }
         .ignoresSafeArea(.all, edges: .vertical)
         .sheet(isPresented: $showCheckoutBottomSheet) {
             CartCheckoutView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
-                .presentationDetents([.medium])
-                .presentationDragIndicator(.visible)
+            .presentationDetents([.medium])
+            .presentationDragIndicator(.visible)
         }
         .onAppear {
             cartViewModel.syncCart(cartItems: cartItems)

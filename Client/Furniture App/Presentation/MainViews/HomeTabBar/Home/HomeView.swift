@@ -19,33 +19,31 @@ struct HomeView: View {
     let carouselHeight: CGFloat = 200
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    header
-                    searchView
-                    carouselView
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                header
+                searchView
+                carouselView
+                
+                HStack {
+                    Text("New Arrivals")
+                        .font(.title2)
+                        .fontWeight(.medium)
                     
-                    HStack {
-                        Text("New Arrivals")
-                            .font(.title2)
-                            .fontWeight(.medium)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "circle.grid.2x2.fill")
-                            .foregroundColor(Color(KeyVariables.primaryColor))
-                    }
-                    .padding(.horizontal)
+                    Spacer()
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(homeViewModel.products, id: \.id) { product in
-                                NavigationLink {
-                                    ProductDetailsView(product: product)
-                                } label: {
-                                    ProductCardView(product: product)
-                                }
+                    Image(systemName: "circle.grid.2x2.fill")
+                        .foregroundColor(Color(KeyVariables.primaryColor))
+                }
+                .padding(.horizontal)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(homeViewModel.products, id: \.id) { product in
+                            NavigationLink {
+                                ProductDetailsView(product: product)
+                            } label: {
+                                ProductCardView(product: product)
                             }
                         }
                     }

@@ -32,24 +32,31 @@ struct CartCheckoutView: View {
                 paymentMethod = .phonePe
             }
             
-            Button {
-                cartViewModel.checkOut {
-                    homeViewModel.selectedTab = .home
-                    showCheckoutBottomSheet = false
-                }
-            } label: {
-                Text("Continue")
-                    .font(.headline.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .padding(.vertical, 20)
-                    .foregroundColor(.white)
-                    .background(Color(KeyVariables.primaryColor))
-                    .cornerRadius(12)
-                    .padding(.top)
-            }
+            continueButton
         }
         .padding(.horizontal)
+    }
+}
+
+extension CartCheckoutView {
+    var continueButton: some View {
+        Button {
+            cartViewModel.checkOut {
+                homeViewModel.selectedTab = .home
+                cartViewModel.isOrderPlaced = true
+                showCheckoutBottomSheet = false
+            }
+        } label: {
+            Text("Continue")
+                .font(.headline.bold())
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                .padding(.vertical, 20)
+                .foregroundColor(.white)
+                .background(Color(KeyVariables.primaryColor))
+                .cornerRadius(12)
+                .padding(.top)
+        }
     }
 }
 

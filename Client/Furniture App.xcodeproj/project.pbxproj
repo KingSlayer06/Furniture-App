@@ -14,6 +14,7 @@
 		A31DAA3F2B720BB900C6FBDD /* CartCheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAA3E2B720BB900C6FBDD /* CartCheckoutView.swift */; };
 		A31DAA412B720F1500C6FBDD /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAA402B720F1500C6FBDD /* RadioButtonView.swift */; };
 		A31DAA432B72185B00C6FBDD /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAA422B72185B00C6FBDD /* PaymentMethod.swift */; };
+		A31DAA462B72196000C6FBDD /* OrderPlacedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31DAA452B72196000C6FBDD /* OrderPlacedView.swift */; };
 		A32023C62B709357001627AE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32023C52B709357001627AE /* HomeViewModel.swift */; };
 		A32023C92B709659001627AE /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32023C82B709659001627AE /* ProductDetailsView.swift */; };
 		A37FB2592B6CAD7400F6414D /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB2582B6CAD7400F6414D /* ProductCardView.swift */; };
@@ -45,6 +46,7 @@
 		A31DAA3E2B720BB900C6FBDD /* CartCheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCheckoutView.swift; sourceTree = "<group>"; };
 		A31DAA402B720F1500C6FBDD /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		A31DAA422B72185B00C6FBDD /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		A31DAA452B72196000C6FBDD /* OrderPlacedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPlacedView.swift; sourceTree = "<group>"; };
 		A32023C52B709357001627AE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A32023C82B709659001627AE /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		A37FB2582B6CAD7400F6414D /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 				A31DAA3C2B712CFB00C6FBDD /* PProductRepository.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		A31DAA442B72194E00C6FBDD /* OrderPlaced */ = {
+			isa = PBXGroup;
+			children = (
+				A31DAA452B72196000C6FBDD /* OrderPlacedView.swift */,
+			);
+			path = OrderPlaced;
 			sourceTree = "<group>";
 		};
 		A32023C72B709646001627AE /* ProductDetails */ = {
@@ -215,6 +225,7 @@
 		A3DA0C432B6A133300B0D2F0 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				A31DAA442B72194E00C6FBDD /* OrderPlaced */,
 				A3DA0C452B6A135A00B0D2F0 /* HomeTabBar */,
 				A32023C72B709646001627AE /* ProductDetails */,
 				A39CC8022B70B4DB0002CE28 /* AllProducts */,
@@ -374,6 +385,7 @@
 				A39CC8042B70B4EF0002CE28 /* AllFurnituresView.swift in Sources */,
 				A3DA0C532B6A1BDE00B0D2F0 /* CartView.swift in Sources */,
 				A3DA0C352B6A101800B0D2F0 /* ContentView.swift in Sources */,
+				A31DAA462B72196000C6FBDD /* OrderPlacedView.swift in Sources */,
 				A31DAA362B712B6600C6FBDD /* ProductRepository.swift in Sources */,
 				A39CC80A2B70DC790002CE28 /* ProductModel.swift in Sources */,
 				A37FB25C2B6CADC700F6414D /* KeyVariables.swift in Sources */,
