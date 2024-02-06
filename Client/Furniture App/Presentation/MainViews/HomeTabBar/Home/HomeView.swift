@@ -59,11 +59,11 @@ extension HomeView {
     
     var carouselView: some View {
         TabView(selection: $selectedCrousel) {
-            ForEach(carouselList.indices, id: \.self) { index in
+            ForEach(homeViewModel.banners.indices, id: \.self) { index in
                 NavigationLink {
-                    ProductDetailsView(product: carouselList[index])
+                    ProductDetailsView(product: homeViewModel.banners[index])
                 } label: {
-                    Image(carouselList[index].image)
+                    Image(homeViewModel.banners[index].image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: width, height: carouselHeight)
@@ -82,7 +82,7 @@ extension HomeView {
                 HStack {
                     DynamicCarouselDotsView(
                         currentPage: $selectedCrousel,
-                        numberOfPages: carouselList.count,
+                        numberOfPages: homeViewModel.banners.count,
                         currentPageIndicatorTintColor: UIColor(named: KeyVariables.primaryColor) ?? .white,
                         pageIndicatorTintColor: UIColor(named: KeyVariables.secondaryColor) ?? .white.withAlphaComponent(0.6))
                     .offset(x: -6,y: 3)
@@ -101,7 +101,7 @@ extension HomeView {
                 } else {
                     secondsRemaining = carouselAnimationSpeed
                     
-                    if selectedCrousel < carouselList.count {
+                    if selectedCrousel < homeViewModel.banners.count {
                         selectedCrousel += 1
                     } else {
                         selectedCrousel = 0

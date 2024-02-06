@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PProductRepository {
-    func fetchAllProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+    func fetchAllProducts(completion: @escaping (Result<FetchAllProductsResponse, Error>) -> Void)
 }

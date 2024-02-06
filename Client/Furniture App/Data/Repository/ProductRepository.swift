@@ -12,21 +12,21 @@ final  class ProductRepository: PProductRepository {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func fetchAllProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
+    func fetchAllProducts(completion: @escaping (Result<FetchAllProductsResponse, Error>) -> Void) {
         
         guard let url = URL(string: "http://localhost:8080/product/allProducts") else { return }
         
         print("fetchAllProducts API called")
         URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
-            .decode(type: [Product].self, decoder: JSONDecoder())
+            .decode(type: FetchAllProductsResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { response in
                 switch response {
                     case .finished:
-                        print("getHomeScreenData Success !!")
+                        print("fetchAllProducts Success !!")
                     case .failure(let error):
-                        print("getHomeScreenData Failure: \(error)")
+                        print("fetchAllProducts Failure: \(error)")
                         completion(.failure(error))
                 }
             } receiveValue: { response in
