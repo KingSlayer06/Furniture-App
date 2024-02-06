@@ -7,11 +7,11 @@
 
 import Foundation
 
-//struct FetchAllProductsResponse: Decodable {
-//    var banners: [Product] = []
-//    var products: [Product] = []
-//    
-//    init() {
-//        
-//    }
-//}
+struct FetchAllProductsResponse: Codable {
+    var banners: [Product] = []
+    var products: [Product] = []
+    
+    init() {
+        
+    }
+}

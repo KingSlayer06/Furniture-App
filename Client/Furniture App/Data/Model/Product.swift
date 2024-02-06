@@ -152,4 +152,4 @@ var productList: [Product] = [
     ),
 ]
 
-var carouselList: [Product] = Array(productList.prefix(5))
+var bannerList: [Product] = Array(productList.prefix(5))
