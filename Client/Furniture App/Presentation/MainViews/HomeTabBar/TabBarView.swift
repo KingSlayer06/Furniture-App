@@ -15,34 +15,46 @@ struct TabBarView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var cartItems: [ProductModel]
     
+    @State var showCheckoutBottomSheet = false
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
-        VStack {
-            TabView(selection: $homeViewModel.selectedTab) {
-                ForEach(tabs, id: \.id) { tab in
-                    switch tab {
-                    case .home:
-                        HomeView()
-                            .tag(tab)
-                    case .search:
-                        AllFurnituresView()
-                            .tag(tab)
-                    case .cart:
-                        CartView()
-                            .tag(tab)
-                    case .profile:
-                        ProfileView()
-                            .tag(tab)
+        NavigationStack {
+            VStack {
+                TabView(selection: $homeViewModel.selectedTab) {
+                    ForEach(tabs, id: \.id) { tab in
+                        switch tab {
+                        case .home:
+                            HomeView()
+                                .tag(tab)
+                        case .search:
+                            AllFurnituresView()
+                                .tag(tab)
+                        case .cart:
+                            CartView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
+                                .tag(tab)
+                        case .profile:
+                            ProfileView()
+                                .tag(tab)
+                        }
                     }
                 }
+                
+                bottomTabBar
             }
-            
-            bottomTabBar
+            .navigationDestination(isPresented: $cartViewModel.isOrderPlaced) {
+                OrderPlacedView()
+            }
         }
         .ignoresSafeArea(.all, edges: .vertical)
+        .sheet(isPresented: $showCheckoutBottomSheet) {
+            CartCheckoutView(showCheckoutBottomSheet: $showCheckoutBottomSheet)
+            .presentationDetents([.medium])
+            .presentationDragIndicator(.visible)
+        }
         .onAppear {
             cartViewModel.syncCart(cartItems: cartItems)
             cartViewModel.modelContext = modelContext

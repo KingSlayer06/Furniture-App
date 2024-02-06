@@ -12,20 +12,18 @@ struct AllFurnituresView: View {
     let column = [GridItem(.adaptive(minimum: 160), spacing: 20)]
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                Text("All Furnitures")
-                    .font(.title.bold())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                
-                LazyVGrid(columns: column, spacing: 20) {
-                    ForEach(homeViewModel.products, id: \.id) { product in
-                        NavigationLink {
-                            ProductDetailsView(product: product)
-                        } label: {
-                            ProductCardView(product: product)
-                        }
+        ScrollView(.vertical, showsIndicators: false) {
+            Text("All Furnitures")
+                .font(.title.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+            
+            LazyVGrid(columns: column, spacing: 20) {
+                ForEach(homeViewModel.products, id: \.id) { product in
+                    NavigationLink {
+                        ProductDetailsView(product: product)
+                    } label: {
+                        ProductCardView(product: product)
                     }
                 }
             }

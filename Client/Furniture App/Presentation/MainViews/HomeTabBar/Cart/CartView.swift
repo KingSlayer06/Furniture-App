@@ -11,6 +11,8 @@ struct CartView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     
+    @Binding var showCheckoutBottomSheet: Bool
+    
     var body: some View {
         VStack {
             if !cartViewModel.products.isEmpty {
@@ -75,9 +77,7 @@ extension CartView {
     
     var checkoutButton: some View {
         Button {
-            cartViewModel.checkOut {
-                
-            }
+            showCheckoutBottomSheet = true
         } label: {
             Text("Checkout Now")
                 .font(.headline.bold())
@@ -93,7 +93,7 @@ extension CartView {
 }
 
 #Preview {
-    CartView()
+    CartView(showCheckoutBottomSheet: .constant(false))
         .environmentObject(HomeViewModel())
         .environmentObject(CartViewModel())
 }

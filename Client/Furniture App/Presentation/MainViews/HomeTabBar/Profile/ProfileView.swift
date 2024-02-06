@@ -10,75 +10,73 @@ import SwiftUI
 struct ProfileView: View {
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: true) {
-                Text("Profile")
-                    .font(.title.bold())
-                    
-                Image("profile-placeholder")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .padding(.vertical)
+        ScrollView(.vertical, showsIndicators: true) {
+            Text("Profile")
+                .font(.title.bold())
+                
+            Image("profile-placeholder")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .padding(.vertical)
+            
+            NavigationLink {
+                Text("Edit Profile")
+            } label: {
+                Text("Edit Profile")
+                    .font(.headline.bold())
+                    .padding(.horizontal, 25)
+                    .padding(.vertical, 20)
+                    .foregroundColor(.white)
+                    .background(Color(KeyVariables.primaryColor))
+                    .cornerRadius(12)
+            }
+            
+            VStack(spacing: 20) {
+                Color(KeyVariables.primaryColor)
+                    .opacity(0.5)
+                    .frame(height: 1)
                 
                 NavigationLink {
-                    Text("Edit Profile")
+                    Text("Settings")
                 } label: {
-                    Text("Edit Profile")
-                        .font(.headline.bold())
-                        .padding(.horizontal, 25)
-                        .padding(.vertical, 20)
-                        .foregroundColor(.white)
-                        .background(Color(KeyVariables.primaryColor))
-                        .cornerRadius(12)
+                    ProfileMenu(image: "gearshape", title: "Settings")
                 }
                 
-                VStack(spacing: 20) {
-                    Color(KeyVariables.primaryColor)
-                        .opacity(0.5)
-                        .frame(height: 1)
-                    
-                    NavigationLink {
-                        Text("Settings")
-                    } label: {
-                        ProfileMenu(image: "gearshape", title: "Settings")
-                    }
-                    
-                    NavigationLink {
-                        Text("My Orders")
-                    } label: {
-                        ProfileMenu(image: "archivebox", title: "My Orders")
-                    }
-                    
-                    NavigationLink {
-                        Text("Address")
-                    } label: {
-                        ProfileMenu(image: "location", title: "Address")
-                    }
-                    
-                    NavigationLink {
-                        Text("Change Password")
-                    } label: {
-                        ProfileMenu(image: "lock", title: "Change Password")
-                    }
-                    
-                    Color(KeyVariables.primaryColor)
-                        .opacity(0.5)
-                        .frame(height: 1)
-                    
-                    NavigationLink {
-                        Text("Help & Support")
-                    } label: {
-                        ProfileMenu(image: "questionmark.circle", title: "Help & Support")
-                    }
-                    
-                    ProfileMenu(image: "gearshape", title: "Logout")
-                        .onTapGesture {
-                            
-                        }
+                NavigationLink {
+                    Text("My Orders")
+                } label: {
+                    ProfileMenu(image: "archivebox", title: "My Orders")
                 }
-                .padding()
+                
+                NavigationLink {
+                    Text("Address")
+                } label: {
+                    ProfileMenu(image: "location", title: "Address")
+                }
+                
+                NavigationLink {
+                    Text("Change Password")
+                } label: {
+                    ProfileMenu(image: "lock", title: "Change Password")
+                }
+                
+                Color(KeyVariables.primaryColor)
+                    .opacity(0.5)
+                    .frame(height: 1)
+                
+                NavigationLink {
+                    Text("Help & Support")
+                } label: {
+                    ProfileMenu(image: "questionmark.circle", title: "Help & Support")
+                }
+                
+                ProfileMenu(image: "gearshape", title: "Logout")
+                    .onTapGesture {
+                        
+                    }
             }
+            .padding()
         }
     }
 }
