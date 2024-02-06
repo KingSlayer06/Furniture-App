@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kingslayer.furnitureapp.service.interfaces.IProductService;
-import com.kingslayer.furnitureapp.entity.Product;
-
-import java.util.List;
+import com.kingslayer.furnitureapp.entity.responseModel.AllProductsResponse;
 
 @RestController
 @RequestMapping("/product")
@@ -22,7 +20,7 @@ public class ProductController {
     }
     
     @GetMapping("/allProducts")
-    public List<Product> getAllProducts() {
+    public AllProductsResponse getAllProducts() {
         return productService.getAllProducts();
     }
 }
