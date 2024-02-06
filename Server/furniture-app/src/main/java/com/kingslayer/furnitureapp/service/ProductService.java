@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
 
     @Transactional
     public AllProductsResponse getAllProducts() {
-        return new AllProductsResponse(productRepository.findAll(), productRepository.getBanners());
+        return new AllProductsResponse(productRepository.getBanners(), productRepository.findAll());
     }
     
 }
