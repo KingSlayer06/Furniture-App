@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kingslayer.furnitureapp.entity.Product;
+import com.kingslayer.furnitureapp.entity.responseModel.AllProductsResponse;
 import com.kingslayer.furnitureapp.repository.ProductRepository;
 import com.kingslayer.furnitureapp.service.interfaces.IProductService;
 
@@ -22,8 +23,8 @@ public class ProductService implements IProductService {
     }
 
     @Transactional
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public AllProductsResponse getAllProducts() {
+        return new AllProductsResponse(productRepository.findAll(), productRepository.getBanners());
     }
     
 }

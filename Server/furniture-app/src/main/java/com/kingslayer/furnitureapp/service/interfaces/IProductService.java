@@ -1,9 +1,7 @@
 package com.kingslayer.furnitureapp.service.interfaces;
 
-import com.kingslayer.furnitureapp.entity.Product;
-
-import java.util.List;
+import com.kingslayer.furnitureapp.entity.responseModel.AllProductsResponse;
 
 public interface IProductService {
-    public List<Product> getAllProducts();
+    public AllProductsResponse getAllProducts();
 }
